@@ -228,12 +228,12 @@ h1 {
     font-size: 80px;
   }
 }
-@media (max-width: 1475px) and (min-width: 1000px) {
+@media (max-width: 1475px) and (min-width: 1151px) {
   .intro-h1 > h1{
     font-size: 60px;
   }
 }
-@media (max-width: 999px) and (min-width: 676px) {
+@media (max-width: 1150px) and (min-width: 676px) {
   .intro-h1 > h1{
     font-size: 50px;
   }
