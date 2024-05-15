@@ -281,7 +281,7 @@ h1 {
 }
 }
 /* Media query for screen sizes between 1860px and 1300px */
-@media (max-width: 676px) and (min-width: 400px) {
+@media (max-width: 676px) and (min-width: 506px){
   .intro-h1 > h1{
     font-size: 49px;
   }
@@ -342,4 +342,91 @@ h1 {
 .des-p1 > h4{
   font-size: 15px;
 }
+}
+@media (max-width: 505px) and (min-width:375px){
+  .intro-h1 > h1{
+    font-size: 37px;
+  }
+  .intro-item > img {
+    height: 150px;
+}
+  .nav {
+    gap: 5%;
+    font-size: 12px;
+}
+  
+.intro-h1 {
+  margin-left: 0px;
+  color: #DDE6ED;
+}
+.para {
+  margin-left: 0px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+.about > div> h2{
+  font-size: 19px;
+}
+.about > div> p{
+  font-size: 12px;
+}
+.p1-box > h4{
+  font-size: 16px;
+}
+.My >h3 >u{
+  font-size: 20px;
+}
+.work-image > a >img{
+  height: 100px;
+}
+.para > p{
+  font-size: 16px;
+}
+.icons > a > img{
+  margin-top: 5px;
+  height: 40px;
+}
+.introduction{
+  grid-template-columns: 180px auto;
+  height: 300px;
+}
+.contain {
+  display: grid;
+  height: auto;
+  grid-template-columns: repeat(8, 1/10 fr);
+  grid-template-rows: 230px 200px 200px 300px 300px;
+  margin-top: 10px;
+  gap: 15px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.des-p1 > h4{
+  font-size: 15px;
+}
+.experience > h2{
+  font-size: 19px;
+}
+.experience > h3{
+  font-size: 19px;
+}
+.experience > h4{
+  font-size: 16px;
+}
+.experience > ul > li{
+  font-size: 12px;
+}
+.education > h2{
+  font-size: 19px;
+}
+.education > h3{
+  font-size: 19px;
+}
+.education > h4{
+  font-size: 16px;
+}
+.education > ul > li{
+  font-size: 12px;
+}
+
 }
