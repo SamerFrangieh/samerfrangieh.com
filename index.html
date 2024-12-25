@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Samer Frangieh</title>
   
   <!-- Bootstrap -->
@@ -11,18 +11,10 @@
     rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous"
-  >
+  />
   
   <!-- Custom CSS -->
-  <link href="style.css" rel="stylesheet">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+HK:wght@100..900&display=swap"
-    rel="stylesheet"
-  >
+  <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -32,12 +24,13 @@
     <div class="nav nav-links">
       <li>
         <div>
-          <img src="./images/sam2.jpg" height="50px" class="little-icon" alt="Profile icon">
+          <!-- Smaller icon in Nav -->
+          <img src="./images/sam2.jpg" class="little-icon" alt="Profile icon" />
         </div>
       </li>
       <li>
         <div class="nav-item">
-          <a href="#abt">About Me</a> <!-- or remove this link entirely if you want -->
+          <a href="#abt">About Me</a>
         </div>
       </li>
       <li>
@@ -62,7 +55,8 @@
   <section class="intro">
     <div class="introduction colobacki">
       <div class="intro-item">
-        <img src="./images/sam2.jpg" class="profile" alt="Profile picture of Samer">
+        <!-- Perfectly circular profile image -->
+        <img src="./images/sam2.jpg" class="profile" alt="Profile picture of Samer" />
       </div>
       <div class="h1">
         <div class="intro-h1">
@@ -73,30 +67,30 @@
         </div>
         <div class="icons intro-h1">
           <a href="https://github.com/SamerFrangieh">
-            <img src="./images/github-logo.png" alt="GitHub icon">
+            <img src="./images/github-logo.png" alt="GitHub icon" />
           </a>
           <a href="https://www.linkedin.com/in/samer-frangieh-b0504521b/">
-            <img src="./images/linkedin.png" alt="LinkedIn icon">
+            <img src="./images/linkedin.png" alt="LinkedIn icon" />
           </a>
           <a href="https://github.com/SamerFrangieh">
-            <img src="./images/web.png" alt="Web icon">
+            <img src="./images/web.png" alt="Web icon" />
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects, Experience, Education in normal flow -->
+  <!-- Main Section: Projects on the LEFT, Experience & Education on the RIGHT (for wide screens) -->
   <section class="intro" id="abt">
     <div class="stuff">
       <div class="contain">
-
-        <!-- Projects Section -->
-        <section class="feat-projects" id="projects">
+        
+        <!-- Left column: Projects -->
+        <section class="feat-projects left-col" id="projects">
           <div class="project-heading">
             <h3>🧑‍💻 My Featured Projects</h3>
             <p>
-              Here are a few projects I've worked on recently. Want to see more?<br>
+              Here are a few projects I've worked on recently. Want to see more?<br />
               Reach out on my <a href="https://linktr.ee/samerfrangieh" target="_blank">Socials</a>.
             </p>
           </div>
@@ -104,66 +98,61 @@
           <div class="project-container">
             <!-- Project Card 1 -->
             <div class="project-card">
-              <img src="./images/fitforall-edit.png" alt="Fitness Club Management System">
+              <img src="./images/fitforall-edit.png" alt="Fitness Club Management System" />
               <div class="card-content">
                 <h4>🏋️‍♂️ Fitness Club Management System</h4>
-                <p>
-                  Gym Admin System using Django, Python, SQL, HTML/CSS
-                </p>
+                <p>Gym Admin System using Django, Python, SQL, HTML/CSS</p>
                 <a href="https://github.com/SamerFrangieh/FitForAll" target="_blank">View on GitHub</a>
               </div>
             </div>
 
             <!-- Project Card 2 -->
             <div class="project-card">
-              <img src="./images/Screenshot 2024-12-25 142301.png" alt="Health Tracking Qt/C++">
+              <img src="./images/Screenshot 2024-12-25 142301.png" alt="Health Tracking Qt/C++" />
               <div class="card-content">
-                <h4>🧩 Health Tracking through Electric Current (Qt, C++, C)</h4>
-                <p>
-                  <!-- Add a description here if desired -->
-                </p>
+                <h4>🧩 Health Tracking (Qt, C++, C)</h4>
+                <p>Bio-sensor data with GUI for real-time tracking</p>
                 <a href="https://github.com/SamerFrangieh/FitForAll" target="_blank">View on GitHub</a>
               </div>
             </div>
 
             <!-- Project Card 3 -->
             <div class="project-card">
-              <img src="./images/rps123.png" alt="Rock Paper Scissors">
+              <img src="./images/rps123.png" alt="Rock Paper Scissors" />
               <div class="card-content">
                 <h4>✂️📃🪨 Rock Paper Scissors</h4>
-                <p>
-                  A quick game using HTML/CSS, JavaScript, jQuery, Node.js
-                </p>
+                <p>A quick game using HTML/CSS, JavaScript, jQuery, Node.js</p>
                 <a href="https://github.com/SamerFrangieh/Rock-Paper-Scissors" target="_blank">View on GitHub</a>
               </div>
             </div>
-
-            <!-- Duplicate <div class="project-card">...</div> blocks to add more projects -->
           </div>
         </section>
 
-        <!-- Experience Section -->
-        <div class="experience">
-          <h2><u>🧑‍💼 My Experience</u></h2>
-          <h3>Science, Mathematics and Programming Tutor</h3>
-          <h4><i>AEFC</i></h4>
-          <ul>
-            <li>Helped improve the academic performance of 10+ struggling students in math, science, and programming.</li>
-            <li>Tutored students with interactive learning and adapted teaching strategies to each student’s learning style.</li>
-            <li>Successfully increased the students’ average grades by +17%, showing a great improvement in their understanding.</li>
-          </ul>
-        </div>
+        <!-- Right column: Experience and Education -->
+        <div class="right-col">
+          <!-- Experience Section -->
+          <div class="experience">
+            <h2><u>🧑‍💼 My Experience</u></h2>
+            <h3>Science, Mathematics and Programming Tutor</h3>
+            <h4><i>AEFC</i></h4>
+            <ul>
+              <li>Helped improve the academic performance of 10+ struggling students in math, science, and programming.</li>
+              <li>Tutored students with interactive learning and adapted teaching strategies to each student’s learning style.</li>
+              <li>Successfully increased the students’ average grades by +17%, showing a great improvement in their understanding.</li>
+            </ul>
+          </div>
 
-        <!-- Education Section -->
-        <div class="education">
-          <h2><u>🎓 My Education</u></h2>
-          <h3>Bachelor of Computer Science (Computer and Internet Security Stream)</h3>
-          <h4><i>Carleton University</i></h4>
-          <ul>
-            <li>Minor: Business</li>
-            <li>Available for a co-op position starting Dec 2024 for either 4 months or 8 months.</li>
-            <li>Relevant Courses: Operating Systems, Intro to Software Engineering, Data Structures and Algorithms</li>
-          </ul>
+          <!-- Education Section -->
+          <div class="education">
+            <h2><u>🎓 My Education</u></h2>
+            <h3>Bachelor of Computer Science (Computer and Internet Security Stream)</h3>
+            <h4><i>Carleton University</i></h4>
+            <ul>
+              <li>Minor: Business</li>
+              <li>Available for a co-op position starting Dec 2024 for either 4 months or 8 months.</li>
+              <li>Relevant Courses: Operating Systems, Intro to Software Engineering, Data Structures and Algorithms</li>
+            </ul>
+          </div>
         </div>
 
       </div>

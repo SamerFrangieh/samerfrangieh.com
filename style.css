@@ -1,193 +1,169 @@
-/* ------------- General Body Settings ------------- */
+/* ------------- RESET / BASE ------------- */
 body {
-  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a; /* Dark background */
+  color: #f2f2f2;           /* Light text */
+  font-family: Arial, sans-serif;
 }
 
-/* ------------- Nav Bar ------------- */
+/* ------------- NAV BAR ------------- */
+.nav-bar {
+  background-color: #262626;
+  border-bottom: 3px solid #0af0ff;
+}
+
 .nav {
   display: flex;
-  gap: 10%;
-  padding: 10px;
-  margin-bottom: 0px;
-  border-top: 5px solid #222831;
-  border-bottom: 5px solid #222831;
-  background-color: #526D82;
-}
-
-.button {
-  color: white;
-  border-radius: 20%;
+  align-items: center;  /* ensures vertical centering of items */
+  gap: 2rem;
+  list-style: none;
+  padding: 10px 20px;
+  margin: 0;
 }
 
 .nav-item > a {
   text-decoration: none;
-  color: white;
-  font-size: 150%;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  align-items: center;
+  color: #0af0ff;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .little-icon {
+  width: 40px;         /* fix smaller icon size in nav bar */
+  height: 40px;        /* keep height same -> perfectly circular */
+  object-fit: cover;   /* no distortion */
   border-radius: 50%;
 }
 
-/* ------------- Introduction Section ------------- */
+/* ------------- INTRO SECTION ------------- */
 .introduction {
   display: grid;
   grid-template-columns: 400px auto;
-  gap: 5px;
-  height: 400px; /* If you see overlap issues, consider removing or reducing this fixed height */
+  gap: 1rem;
+  height: 400px; /* If it crops too much, remove or reduce this. */
   margin-top: 0;
   margin-bottom: 0;
+  background-color: #1f1f1f;
 }
 
 .intro-item {
   display: flex;
   justify-content: center;
-  margin-left: 10px;
+  align-items: center;  /* center the image vertically too */
 }
 
 .profile {
-  max-width: 300px; 
-  /* max-width: 200px;  <- remove or set higher if needed */
-  height: auto;
-  border-radius: 50%;
-  border: 5px solid #76ABAE;
-  box-shadow: 16px 17px 10px rgba(0, 0, 0, 0.4);
+  width: 250px;          /* fixed size for a perfect circle */
+  height: 250px;         /* same as width */
+  object-fit: cover;     /* crop if rectangular */
+  border-radius: 50%;    
+  border: 5px solid #0af0ff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   margin-right: 5px;
 }
 
-.colobacki {
-  background: linear-gradient(-300deg, #526D82, #9DB2BF, #114232);
-  background-size: 180% 180%;
-  animation: gradient-animation 10s ease infinite;
+.h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 270%;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  margin-top: 0;
-  margin-bottom: 0;
-  color: #DDE6ED;
-}
-
-.intro-h1 {
-  margin-left: 10px;
-  color: #DDE6ED;
+.intro-h1 h1 {
+  margin: 0;
+  font-size: 5rem;
+  color: #0af0ff; /* accent color for heading */
 }
 
 .para {
-  margin-left: 19px;
-  margin-top: 30px;
-  margin-bottom: 13px;
+  margin: 1rem 0;
+  color: #f2f2f2;
 }
 
-/* Social icons sizing */
 .icons > a > img {
-  max-width: 40px;
-  height: auto;
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
+/* Remove underlines on icon links */
 .icons a {
-  text-decoration: none; 
-  border: none; 
+  text-decoration: none;
 }
 
-/* Also ensure icons themselves have no border/underline */
-.icons a img {
-  text-decoration: none; 
-  border: none;
-}
-
-/* ------------- Projects, Experience, Education Section ------------- */
+/* ------------- MAIN SECTION ------------- */
 .stuff {
   display: flex;
   justify-content: center;
-  background-color: #A5C9CA;
-  border-top: 5px solid black;
+  background-color: #1a1a1a;
 }
 
-/*
-   .contain uses a simple FLEX COLUMN layout
-   so each section stacks in normal flow, preventing overlap
-*/
 .contain {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  
+  width: 90%;
+  max-width: 1400px;
   margin-top: 15px;
   margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  gap: 15px; /* space between each child (Projects, Experience, Education) */
+  display: flex;
+  flex-direction: column; /* fallback for small screens */
+  gap: 2rem;
 }
 
-/* Experience */
-.experience {
-  background-color: #526D82;
-  border: 5px solid black;
-  color: #DDE6ED;
-  padding: 1rem;
+/* Two columns at large screens: LEFT = Projects, RIGHT = Experience & Education */
+@media (min-width: 1100px) {
+  .contain {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* left-col is bigger for projects, right-col narrower */
+    gap: 2rem;
+  }
 }
 
-/* Education */
-.education {
-  background-color: #526D82;
-  border: 5px solid black;
-  color: #DDE6ED;
-  padding: 1rem;
+@media(max-width:1050px) and (min-width:700px){
+  .intro-h1 h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: #0af0ff; /* accent color for heading */
+  }
+
 }
 
-/* ------------- Featured Projects ------------- */
+/* Left column = Projects */
+.left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+/* Right column = Experience + Education */
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ------------- PROJECTS ------------- */
 .feat-projects {
-  background-color: #526D82;
-  border: 5px solid black;
-  color: #DDE6ED;
-  padding: 2rem 1rem;
+  background-color: #2a2a2a;
+  border: 3px solid #0af0ff;
+  border-radius: 8px;
+  padding: 1.5rem;
 }
 
 .project-heading {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
-
 .project-heading h3 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 40px;
   margin: 0 0 0.5rem 0;
-  text-decoration: underline;
+  color: #0af0ff;
+  font-size: 1.8rem;
 }
-
 .project-heading p {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  line-height: 1.4;
+  color: #f2f2f2;
 }
 
-.project-heading a {
-  text-decoration: none;
-  color: #114232;
-  font-weight: bold;
-}
-
-/* Project container uses flex so the cards wrap on smaller screens */
+/* container for cards */
 .project-container {
   display: flex;
   flex-wrap: wrap;
@@ -195,22 +171,21 @@ h1 {
   gap: 1.5rem;
 }
 
-/* Each project card */
+/* project card */
 .project-card {
-  background-color: #36454F;
-  border: 2px solid #000;
+  background-color: #1e1e1e;
+  border: 2px solid #0af0ff;
   border-radius: 8px;
-  width: 300px;
+  width: 280px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
 }
 
-/* Project card image */
 .project-card img {
   width: 100%;
-  max-height: 200px;
+  height: 180px;
   object-fit: cover;
   display: block;
 }
@@ -220,12 +195,13 @@ h1 {
 }
 
 .card-content h4 {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.5rem;
+  color: #0af0ff;
   font-size: 1.1rem;
 }
-
 .card-content p {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
+  color: #f2f2f2;
   font-size: 0.95rem;
   line-height: 1.4;
 }
@@ -233,155 +209,78 @@ h1 {
 /* "View on GitHub" link */
 .card-content a {
   text-decoration: none;
-  color: #DDE6ED;
-  background-color: #114232;
+  color: #1a1a1a;
+  background-color: #0af0ff;
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  font-family: "Montserrat", sans-serif;
   transition: background-color 0.3s ease;
 }
-
 .card-content a:hover {
-  background-color: #3c6b5d;
+  background-color: #5affff; /* lighter teal on hover */
 }
 
-/* ------------- Media Queries ------------- */
-@media (max-width: 1850px) and (min-width: 1476px) {
-  .intro-h1 > h1 {
-    font-size: 80px;
+/* ------------- EXPERIENCE & EDUCATION ------------- */
+.experience,
+.education {
+  background-color: #2a2a2a;
+  border: 3px solid #0af0ff;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.experience h2,
+.education h2 {
+  margin: 0 0 0.5rem;
+  color: #0af0ff;
+}
+.experience h3,
+.education h3 {
+  margin: 0 0 0.5rem;
+  color: #f2f2f2;
+}
+.experience h4,
+.education h4 {
+  margin: 0 0 0.5rem;
+  color: #ccc;
+  font-style: italic;
+}
+
+.experience ul,
+.education ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* ------------- RESPONSIVE TWEAKS FOR SMALLER SCREENS ------------- */
+@media (max-width: 1099px) {
+  .contain {
+    display: flex;
+    flex-direction: column; /* stack them for smaller screens */
   }
 }
 
-@media (max-width: 1475px) and (min-width: 1151px) {
-  .intro-h1 > h1 {
-    font-size: 60px;
-  }
-}
-
-@media (max-width: 1150px) and (min-width: 676px) {
-  .intro-h1 > h1 {
-    font-size: 50px;
-  }
-  .intro-item > img {
-    height: 250px;
-  }
-  .nav {
-    gap: 5%;
-    font-size: 10px;
-  }
-  .intro-h1 {
-    margin-left: 0px;
-  }
-  .para {
-    margin-left: 0px;
-    margin-top: 8px;
-    margin-bottom: 5px;
-  }
-  .icons > a > img {
-    margin-top: 5px;
-    height: 80px;
-  }
+@media (max-width: 700px) {
   .introduction {
-    /* height: 400px; */
-    grid-template-columns: 300px auto;
-  }
-}
-
-@media (max-width: 676px) and (min-width: 506px) {
-  .intro-h1 > h1 {
-    font-size: 49px;
-  }
-  .intro-item > img {
-    height: 200px;
-  }
-  .nav {
-    gap: 5%;
-    font-size: 12px;
-  }
-  .intro-h1 {
-    margin-left: 0px;
-  }
-  .para {
-    margin-left: 0px;
-    margin-top: 8px;
-    margin-bottom: 5px;
-  }
-  .icons > a > img {
-    margin-top: 5px;
-    height: 40px;
-  }
-  .introduction {
-    grid-template-columns: 230px auto;
-    /* height: 300px; */
-  }
-}
-
-@media (max-width: 505px) and (min-width: 375px) {
-  .intro-h1 > h1 {
-    font-size: 37px;
-  }
-  .intro-item > img {
-    height: 150px;
-  }
-  .nav {
-    gap: 5%;
-    font-size: 12px;
-  }
-  .intro-h1 {
-    margin-left: 0px;
-  }
-  .para {
-    margin-left: 0px;
-    margin-top: 8px;
-    margin-bottom: 5px;
-  }
-  .icons > a > img {
-    margin-top: 5px;
-    height: 40px;
-  }
-  .introduction {
-    grid-template-columns: 180px auto;
-    /* height: 300px; */
-  }
-  .experience > h2 {
-    font-size: 19px;
-  }
-  .experience > h3 {
-    font-size: 19px;
-  }
-  .experience > h4 {
-    font-size: 16px;
-  }
-  .experience > ul > li {
-    font-size: 12px;
-  }
-  .education > h2 {
-    font-size: 19px;
-  }
-  .education > h3 {
-    font-size: 19px;
-  }
-  .education > h4 {
-    font-size: 16px;
-  }
-  .education > ul > li {
-    font-size: 12px;
+    grid-template-columns: 1fr; /* single column if too narrow */
+    height: auto;               /* remove forced height */
+    padding: 1rem;
   }
 
-  /* Make project cards scale nicely on smaller screens */
-  .project-card {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-}
-
-/* Optional media query to enlarge profile/icons on large screens */
-@media (min-width: 1100px) {
   .profile {
-    max-width: 300px; /* bigger profile picture at large screens */
+    width: 180px;
+    height: 180px;
   }
+
+  .intro-h1 h1 {
+    font-size: 2rem;
+  }
+
   .icons > a > img {
-    max-width: 60px; /* bigger icons at large screens */
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav {
+    gap: 1rem;
   }
 }
