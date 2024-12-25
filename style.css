@@ -1,7 +1,9 @@
+/* ------------- General Body Settings ------------- */
 body {
   height: 100vh;
 }
 
+/* ------------- Nav Bar ------------- */
 .nav {
   display: flex;
   gap: 10%;
@@ -29,11 +31,12 @@ body {
   border-radius: 50%;
 }
 
+/* ------------- Introduction Section ------------- */
 .introduction {
   display: grid;
   grid-template-columns: 400px auto;
   gap: 5px;
-  height: 400px;
+  height: 400px; /* If you see overlap issues, consider removing or reducing this fixed height */
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -45,10 +48,11 @@ body {
 }
 
 .profile {
+  max-width: 300px; 
+  /* max-width: 200px;  <- remove or set higher if needed */
+  height: auto;
   border-radius: 50%;
   border: 5px solid #76ABAE;
-  align-self: center;
-  align-items: center;
   box-shadow: 16px 17px 10px rgba(0, 0, 0, 0.4);
   margin-right: 5px;
 }
@@ -61,13 +65,13 @@ body {
 
 @keyframes gradient-animation {
   0% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
   50% {
-      background-position: 100% 50%;
+    background-position: 100% 50%;
   }
   100% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 }
 
@@ -93,13 +97,24 @@ h1 {
   margin-bottom: 13px;
 }
 
-.icons {
-  margin-top: 30px;
-  margin-bottom: 13px;
-  display: flex;
-  gap: 10%;
+/* Social icons sizing */
+.icons > a > img {
+  max-width: 40px;
+  height: auto;
 }
 
+.icons a {
+  text-decoration: none; 
+  border: none; 
+}
+
+/* Also ensure icons themselves have no border/underline */
+.icons a img {
+  text-decoration: none; 
+  border: none;
+}
+
+/* ------------- Projects, Experience, Education Section ------------- */
 .stuff {
   display: flex;
   justify-content: center;
@@ -107,326 +122,266 @@ h1 {
   border-top: 5px solid black;
 }
 
+/*
+   .contain uses a simple FLEX COLUMN layout
+   so each section stacks in normal flow, preventing overlap
+*/
 .contain {
-  display: grid;
-  height: auto;
-  grid-template-columns: repeat(8, 1/10 fr);
-  grid-template-rows: 300px 300px 300px 300px 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  
   margin-top: 15px;
-  gap: 15px;
   margin-bottom: 20px;
   margin-left: 20px;
   margin-right: 20px;
+  gap: 15px; /* space between each child (Projects, Experience, Education) */
 }
 
-.about {
-  grid-area: 1/1/2/9;
-  background-color: #526D82;
-  border: 5px solid black;
-}
-
-
-.education {
-  grid-area: 5/1/6/9;
-  background-color: #526D82;
-  border: 5px solid black;
-  color: #DDE6ED;
-}
+/* Experience */
 .experience {
-  grid-area: 4/1/5/9;
   background-color: #526D82;
   border: 5px solid black;
   color: #DDE6ED;
+  padding: 1rem;
 }
 
-.about > div > h2 {
-  font-family: "Montserrat", sans-serif;
-  margin-left: 10px;
+/* Education */
+.education {
+  background-color: #526D82;
+  border: 5px solid black;
   color: #DDE6ED;
-  font-size: 50px;
+  padding: 1rem;
 }
 
-.about > div > p {
-  font-family: "Montserrat", sans-serif;
-  margin-left: 10px;
-  color: #DDE6ED;
-  font-size: 25px;
-}
-
+/* ------------- Featured Projects ------------- */
 .feat-projects {
-  grid-area: 2/1/4/9;
   background-color: #526D82;
   border: 5px solid black;
-}
-
-.titr {
-  display: grid;
-  height: auto;
-  grid-template-columns: 0.5fr 0.5fr;
-  grid-template-rows: 50px 550px;
-}
-
-.My {
-  grid-area: 1/1/2/3;
-  display: flex;
-  justify-content: center;
-}
-
-.My > h3 {
-  font-family: "Montserrat", sans-serif;
-  margin-left: 10px;
   color: #DDE6ED;
-  font-size: 40px;
+  padding: 2rem 1rem;
 }
 
-.p1 {
-  grid-area: 2/1/3/2;
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  font-family: "Montserrat", sans-serif;
-  color: #DDE6ED;
-  font-size: 30px;
-}
-
-.p1-box > div > a > img {
-  border: solid 5px black;
-}
-
-.p1-box > h3 {
-  display: flex;
-  justify-content: center;
-}
-
-.p2 {
-  grid-area: 2/2/3/3;
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  font-family: "Montserrat", sans-serif;
-  color: #DDE6ED;
-  font-size: 20px;
-}
-
-.p1-box {
+.project-heading {
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-.intro-item > img {
-  height: 350px;
-}
-.work-image > a >img{
-  height: 350px;
-}
-.icons > a > img{
-  height: 100px;
+.project-heading h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  margin: 0 0 0.5rem 0;
+  text-decoration: underline;
 }
 
+.project-heading p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.project-heading a {
+  text-decoration: none;
+  color: #114232;
+  font-weight: bold;
+}
+
+/* Project container uses flex so the cards wrap on smaller screens */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Each project card */
+.project-card {
+  background-color: #36454F;
+  border: 2px solid #000;
+  border-radius: 8px;
+  width: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Project card image */
+.project-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.card-content p {
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* "View on GitHub" link */
+.card-content a {
+  text-decoration: none;
+  color: #DDE6ED;
+  background-color: #114232;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-family: "Montserrat", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.card-content a:hover {
+  background-color: #3c6b5d;
+}
+
+/* ------------- Media Queries ------------- */
 @media (max-width: 1850px) and (min-width: 1476px) {
-  .intro-h1 > h1{
+  .intro-h1 > h1 {
     font-size: 80px;
   }
 }
+
 @media (max-width: 1475px) and (min-width: 1151px) {
-  .intro-h1 > h1{
+  .intro-h1 > h1 {
     font-size: 60px;
   }
 }
+
 @media (max-width: 1150px) and (min-width: 676px) {
-  .intro-h1 > h1{
+  .intro-h1 > h1 {
     font-size: 50px;
   }
   .intro-item > img {
     height: 250px;
-}
+  }
   .nav {
     gap: 5%;
     font-size: 10px;
+  }
+  .intro-h1 {
+    margin-left: 0px;
+  }
+  .para {
+    margin-left: 0px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+  }
+  .icons > a > img {
+    margin-top: 5px;
+    height: 80px;
+  }
+  .introduction {
+    /* height: 400px; */
+    grid-template-columns: 300px auto;
+  }
 }
-  
-.intro-h1 {
-  margin-left: 0px;
-  color: #DDE6ED;
-}
-.para {
-  margin-left: 0px;
-  margin-top: 8px;
-  margin-bottom: 5px;
-}
-.about > div> h2{
-  font-size: 30px;
-}
-.about > div> p{
-  font-size: 20px;
-}
-.p1-box > h4{
-  font-size: 20px;
-}
-.My >h3 >u{
-  font-size: 30px;
-}
-.work-image > a >img{
-  height: 200px;
-}
-.para > p{
-  font-size: 30px;
-}
-.icons > a > img{
-  margin-top: 5px;
-  height: 80px;
-}
-.introduction{
-  grid-template-columns: 300px auto;
-}
-}
-/* Media query for screen sizes between 1860px and 1300px */
-@media (max-width: 676px) and (min-width: 506px){
-  .intro-h1 > h1{
+
+@media (max-width: 676px) and (min-width: 506px) {
+  .intro-h1 > h1 {
     font-size: 49px;
   }
   .intro-item > img {
     height: 200px;
-}
+  }
   .nav {
     gap: 5%;
     font-size: 12px;
+  }
+  .intro-h1 {
+    margin-left: 0px;
+  }
+  .para {
+    margin-left: 0px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+  }
+  .icons > a > img {
+    margin-top: 5px;
+    height: 40px;
+  }
+  .introduction {
+    grid-template-columns: 230px auto;
+    /* height: 300px; */
+  }
 }
-  
-.intro-h1 {
-  margin-left: 0px;
-  color: #DDE6ED;
-}
-.para {
-  margin-left: 0px;
-  margin-top: 8px;
-  margin-bottom: 5px;
-}
-.about > div> h2{
-  font-size: 20px;
-}
-.about > div> p{
-  font-size: 15px;
-}
-.p1-box > h4{
-  font-size: 18px;
-}
-.My >h3 >u{
-  font-size: 30px;
-}
-.work-image > a >img{
-  height: 150px;
-}
-.para > p{
-  font-size: 18px;
-}
-.icons > a > img{
-  margin-top: 5px;
-  height: 40px;
-}
-.introduction{
-  grid-template-columns: 230px auto;
-  height: 300px;
-}
-.contain {
-  display: grid;
-  height: auto;
-  grid-template-columns: repeat(8, 1/10 fr);
-  grid-template-rows: 230px 200px 200px 300px 300px;
-  margin-top: 10px;
-  gap: 15px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.des-p1 > h4{
-  font-size: 15px;
-}
-}
-@media (max-width: 505px) and (min-width:375px){
-  .intro-h1 > h1{
+
+@media (max-width: 505px) and (min-width: 375px) {
+  .intro-h1 > h1 {
     font-size: 37px;
   }
   .intro-item > img {
     height: 150px;
-}
+  }
   .nav {
     gap: 5%;
     font-size: 12px;
-}
-  
-.intro-h1 {
-  margin-left: 0px;
-  color: #DDE6ED;
-}
-.para {
-  margin-left: 0px;
-  margin-top: 8px;
-  margin-bottom: 5px;
-}
-.about > div> h2{
-  font-size: 19px;
-}
-.about > div> p{
-  font-size: 12px;
-}
-.p1-box > h4{
-  font-size: 16px;
-}
-.My >h3 >u{
-  font-size: 20px;
-}
-.work-image > a >img{
-  height: 100px;
-}
-.para > p{
-  font-size: 16px;
-}
-.icons > a > img{
-  margin-top: 5px;
-  height: 40px;
-}
-.introduction{
-  grid-template-columns: 180px auto;
-  height: 300px;
-}
-.contain {
-  display: grid;
-  height: auto;
-  grid-template-columns: repeat(8, 1/10 fr);
-  grid-template-rows: 230px 200px 200px 300px 300px;
-  margin-top: 10px;
-  gap: 15px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.des-p1 > h4{
-  font-size: 15px;
-}
-.experience > h2{
-  font-size: 19px;
-}
-.experience > h3{
-  font-size: 19px;
-}
-.experience > h4{
-  font-size: 16px;
-}
-.experience > ul > li{
-  font-size: 12px;
-}
-.education > h2{
-  font-size: 19px;
-}
-.education > h3{
-  font-size: 19px;
-}
-.education > h4{
-  font-size: 16px;
-}
-.education > ul > li{
-  font-size: 12px;
+  }
+  .intro-h1 {
+    margin-left: 0px;
+  }
+  .para {
+    margin-left: 0px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+  }
+  .icons > a > img {
+    margin-top: 5px;
+    height: 40px;
+  }
+  .introduction {
+    grid-template-columns: 180px auto;
+    /* height: 300px; */
+  }
+  .experience > h2 {
+    font-size: 19px;
+  }
+  .experience > h3 {
+    font-size: 19px;
+  }
+  .experience > h4 {
+    font-size: 16px;
+  }
+  .experience > ul > li {
+    font-size: 12px;
+  }
+  .education > h2 {
+    font-size: 19px;
+  }
+  .education > h3 {
+    font-size: 19px;
+  }
+  .education > h4 {
+    font-size: 16px;
+  }
+  .education > ul > li {
+    font-size: 12px;
+  }
+
+  /* Make project cards scale nicely on smaller screens */
+  .project-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
 }
 
+/* Optional media query to enlarge profile/icons on large screens */
+@media (min-width: 1100px) {
+  .profile {
+    max-width: 300px; /* bigger profile picture at large screens */
+  }
+  .icons > a > img {
+    max-width: 60px; /* bigger icons at large screens */
+  }
 }
